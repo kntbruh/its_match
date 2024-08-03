@@ -1,6 +1,8 @@
-import { Text, View, StyleSheet, Pressable, Button } from 'react-native';
+import { Text, View, StyleSheet, Pressable, Image } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { Link } from 'expo-router';
+import List from '@/components/its_match/list';
+import { FreeTrial } from '@/components/its_match/freeTrial';
 
 export default function Paywall() {
   return (
@@ -9,50 +11,13 @@ export default function Paywall() {
         <AntDesign name='left' size={35} color='pink' />
       </Link>
       <View>
-        <Text style={styles.text}>IT'S A MATCH!</Text>
+        <Image
+          source={require('../assets/images/match1.png')}
+          style={styles.text}
+        />
       </View>
-      <View style={styles.list}>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>🔥</Text>
-          <Text style={styles.listText}>Unlimited Rizz</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>🤝</Text>
-          <Text style={styles.listText}>Trusted by Millions</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>❤️‍🔥</Text>
-          <Text style={styles.listText}>Coach Recommended</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>🍯</Text>
-          <Text style={styles.listText}>Proven to Get Dates</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>📈</Text>
-          <Text style={styles.listText}>x10 More Responses</Text>
-        </View>
-        <View style={styles.listItem}>
-          <Text style={styles.listIcon}>😈</Text>
-          <Text style={styles.listText}>x8 More Dates</Text>
-        </View>
-      </View>
-      <View style={styles.freeTrial}>
-        <View style={styles.rizzGod}>
-          <Text style={styles.rizzText}>Rizz God</Text>
-        </View>
-        <View style={styles.mainBox}>
-          <View>
-            <Text style={styles.elevate}>Elevate Your Game</Text>
-          </View>
-          <Link href='/regular' style={styles.button}>
-            <Text style={styles.buttonText}>Unlock Free Trial</Text>
-          </Link>
-          <View>
-            <Text style={styles.risk}>risk-free trial then $8.67/week</Text>
-          </View>
-        </View>
-      </View>
+      <List />
+      <FreeTrial />
     </View>
   );
 }
@@ -60,19 +25,14 @@ export default function Paywall() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: 70,
-    paddingHorizontal: 44,
-    justifyContent: 'flex-start',
+    paddingVertical: 20,
+    paddingHorizontal: 40,
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#040404',
   },
-  icon: { paddingBottom: 50, marginRight: 280 },
-  text: {
-    color: '#ED217C',
-    fontSize: 30,
-    fontWeight: '700',
-    lineHeight: 52.05,
-  },
+  icon: { paddingBottom: 50, marginRight: 285 },
+  text: { height: 134 },
   list: {
     paddingTop: 52,
   },
